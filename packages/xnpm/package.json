@@ -1,0 +1,11 @@
+{
+  "name": "xnpm",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "xnpm": "bin/xnpm"
+  },
+  "dependencies": {
+    "commander": "^3.0.1"
+  }
+}

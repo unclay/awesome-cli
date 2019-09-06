@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+const program = require('commander')
+const inquirer = require('inquirer')
+const pkg = require('../package.json')
+
+program.parse(process.argv)
+// const [ projectName ] = program.args
+
+console.log(`Xvue CLI v${pkg.version}\n`);
+
+const promptList = [{
+  type: 'list',
+  message: 'Please pick a preset:',
+  name: 'preset',
+  choices: [
+    'default (babel, eslint)',
+    'Manually select features'
+  ]
+}]
+
+inquirer.prompt(promptList).then(answers => {
+  console.log(answers)
+})

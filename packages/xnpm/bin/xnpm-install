@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+const program = require('commander')
+
+program
+  .usage('[options]')
+  .option('--save', 'save in dependencies')
+  .option('--save-dev', 'save in devDependencies')
+  .parse(process.argv);
+
+let used = []
+if (program.save) used.push('; use --save')
+if (program.saveDev) used.push('; use --save-dev')
+console.log('xnpm install success', ...used)

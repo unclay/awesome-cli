@@ -1,0 +1,12 @@
+{
+  "name": "xvue-cli",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "xvue": "bin/xvue"
+  },
+  "dependencies": {
+    "commander": "^3.0.1",
+    "inquirer": "^7.0.0"
+  }
+}

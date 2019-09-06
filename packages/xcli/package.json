@@ -1,0 +1,7 @@
+{
+  "name": "xcli",
+  "version": "0.1.0",
+  "bin": {
+    "xcli": "bin/xcli"
+  }
+}
