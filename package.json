@@ -1,0 +1,19 @@
+{
+  "name": "awesome-cli",
+  "version": "1.0.0",
+  "description": "如何更好的开发命令行工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unclay/awesome-cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unclay/awesome-cli/issues"
+  },
+  "homepage": "https://github.com/unclay/awesome-cli#readme"
+}

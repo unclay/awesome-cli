@@ -4,20 +4,55 @@ const inquirer = require('inquirer')
 const pkg = require('../package.json')
 
 program.parse(process.argv)
-// const [ projectName ] = program.args
+const [ projectName ] = program.args
+const presetDicts = {
+  babel: 'Babel',
+  typescript: 'TypeScript',
+  pwa: 'Progressive Web App (PWA) Support',
+  router: 'Router',
+  vuex: 'Vuex',
+  precss: 'CSS Pre-processors',
+  linter: 'Linter / Formatter',
+  unit: 'Unit Testing',
+  e2e: 'E2E Testing'
+}
+const defaultPresets = {
+  __default__: [
+    'babel',
+    'eslint'
+  ]
+}
+const presetList = [
+  {
+    type: 'list',
+    message: 'Please pick a preset:',
+    name: 'type',
+    choices: [
+      {
+        name: 'default (babel, eslint)',
+        value: '__default__'
+      },
+      {
+        name: 'Manually select features',
+        value: '__manual__'
+      }
+    ]
+  }, {
+    when: preset => preset.type === '__manual__',
+    type: 'checkbox',
+    message: 'Check the features needed for your project',
+    name: '__manual__',
+    choices: Object.keys(presetDicts).map(item => ({
+      name: presetDicts[item],
+      value: item,
+      checked: /babel|linter/.test(item)
+    }))
+  }
+]
 
 console.log(`Xvue CLI v${pkg.version}\n`);
-
-const promptList = [{
-  type: 'list',
-  message: 'Please pick a preset:',
-  name: 'preset',
-  choices: [
-    'default (babel, eslint)',
-    'Manually select features'
-  ]
-}]
-
-inquirer.prompt(promptList).then(answers => {
-  console.log(answers)
+inquirer.prompt(presetList).then(answers => {
+  const presets = answers[answers.type] || defaultPresets[answers.type]
+  console.log('Project Name:', projectName)
+  console.log('Preset Choice:', presets)
 })

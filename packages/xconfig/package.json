@@ -1,0 +1,13 @@
+{
+  "name": "xconfig",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "xconfig": "bin/xconfig"
+  },
+  "dependencies": {
+    "commander": "^3.0.1",
+    "toml": "^3.0.0",
+    "toml-require": "^1.2.0"
+  }
+}

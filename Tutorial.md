@@ -1,5 +1,12 @@
 # 入门基础
 
+这里只简单介绍如何快速开发一个 `CLI`，具体业务需要根据实际来开发，以下主要通过三个例子渐进式学习
+
+- 从 0 到 1 开发命令行工具
+- 命令帮助文档
+- 命令行交互（input、confirm、list、checkbox 等等）
+
+
 ## 创建一个 `CLI`，例子 [xcli](./packages/xcli)
 
 一个可以本地运行的 `CLI`，只需要两个文件即可：
@@ -35,7 +42,7 @@ $ xcli
 Welcome to awesome-cli
 ```
 
-## 命令行工具界面，例子 [xnpm](./packages/xcli)
+## 命令帮助文档，例子 [xnpm](./packages/xnpm)
 
 一个命令行工具最基本就是工具界面，执行一个命令，输出帮助文档  
 [commander](https://github.com/tj/commander.js#commands) 是一个命令行界面的解决方案，我们将使用它，结果如下：
@@ -56,18 +63,25 @@ $ xnpm install --save
 xnpm install success ; use --save
 ```
 
-## 命令行交互，例子 [vue-xcli](./packages/xvue-cli)
+## 命令行交互，例子 [xvue-cli](./packages/xvue-cli)
 
-```
+除了帮助文档，命令还需交互，如 input、confirm、list、checkbox 等等。
+
+[inquirer](https://github.com/SBoudrias/Inquirer.js) 是一个用户与命令行交互的工具，我们将使用它，结果如下：
+
+```bash
 $ xvue create project
 Xvue CLI v0.1.0
 
 ? Please pick a preset: (Use arrow keys)
-> qq (vue-router, vuex, less, babel, eslint)
-  bz (vue-router, vuex, less, babel, eslint)
-  test (vue-router, babel)
-  bznew (vue-router, vuex, less, babel, eslint)
-  bz1 (vue-router, vuex, less, babel, eslint)
-  default (babel, eslint)
+> default (babel, eslint)
   Manually select features
+? Check the features needed for your project 
+  ◉ Babel
+❯ ◉ TypeScript
+  ◯ Progressive Web App (PWA) Support
+  ◯ Router
+  ◯ Vuex
+  ◯ CSS Pre-processors
+  ◉ Linter / Formatter
 ```

@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+require('toml-require').install()
+const qq = require('./qq.toml')
+console.log(qq)
