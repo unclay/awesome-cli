@@ -40,6 +40,7 @@
 
 - [lodash](https://github.com/lodash/lodash) 开发工具库
 - [url-polyfill](https://github.com/lifaon74/url-polyfill) 解析 url
+- [path-to-regexp](https://github.com/pillarjs/path-to-regexp) url 正则表达式，匹配 url
 - [think-helper](https://github.com/thinkjs/think-helper) 辅助函数（is*、md5、extend、uuid、chmod）
 - [dayjs](https://github.com/iamkun/dayjs) 日期时间处理器
 
