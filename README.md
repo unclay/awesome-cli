@@ -44,6 +44,7 @@
 - [think-helper](https://github.com/thinkjs/think-helper) 辅助函数（is*、md5、extend、uuid、chmod）
 - [dayjs](https://github.com/iamkun/dayjs) 日期时间处理器
 - [semver](https://github.com/npm/node-semver) 版本号管理
+- [shields](https://shields.io/#/) 标签生成
 
 
 ### 代码压缩
